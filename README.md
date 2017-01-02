@@ -45,6 +45,7 @@ mksbt.sh --scala10 | --scala11 | --spark1 | --spark2 | --java [--provided] proje
 - For Spark currently HDP 2.5.3 (default) and 2.5.0 (commented) are supported 
 - The project folder will be named `test-project`, the main class normalized to `TestProject`
 - The resulting hierarchy will be
+
 	```text
 	test-project/
 	 +- build.sbt
