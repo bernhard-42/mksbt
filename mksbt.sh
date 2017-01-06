@@ -148,7 +148,7 @@ EOF3
 # Scala build.sbt
 #
 
-function scala_build { 
+function scala_build {
   cat << EOF4 > "$1"
 name := "$ONAME"
 
@@ -182,7 +182,7 @@ EOF5
 # Scala build.sbt
 #
 
-function java_build { 
+function java_build {
   cat << EOF6 > "$1"
 name := "$ONAME"
 
@@ -218,31 +218,31 @@ echo "Creating project \"$PNAME\" with main class \"$ONAME\""
 
 #
 # Create project
-# 
+#
 
 mkdir -p $PNAME
 cd $PNAME
 
 if [ $JAVA -eq 0 ]; then
   mkdir -p src/main/scala
-  
+
   if [ $SPARK -eq 1 ]; then
     spark_example "src/main/scala/$ONAME.scala"
     spark_build "./build.sbt"
   else
     scala_example "src/main/scala/$ONAME.scala"
     scala_build "./build.sbt"
-  fi 
+  fi
 else
   mkdir -p src/main/java
 
   java_example "src/main/java/$ONAME.java"
-  java_build "./build.sbt"  
+  java_build "./build.sbt"
 fi
 
 #
 # Create project folder and add sbt assembly
-# 
+#
 
 mkdir project
 cat << EOF5 > project/plugins.sbt
