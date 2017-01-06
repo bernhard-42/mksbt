@@ -249,4 +249,4 @@ cat << EOF5 > project/plugins.sbt
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "$SBT_ASSEMBLY_VERSION")
 EOF5
 
-subl .
+${EDITOR:-vi} .
